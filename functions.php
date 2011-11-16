@@ -1,22 +1,34 @@
 <?php
 
-// Load a copy of jQuery from Google's CDN instead of the local copy.
-
+// Load a jQuery from WordPress the local copy. and enqueue all other scripts
 function my_scripts_method() {
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js');
+    wp_register_script('customs',get_template_directory_uri() . '/javascripts/jquery.reveal.js','','',true);
+    wp_register_script('orbitcc',get_template_directory_uri() . '/javascripts/jquery.orbit-1.3.0.js','','',true);
+    wp_register_script('customformscc',get_template_directory_uri() . '/javascripts/jquery.customforms.js','','',true);
+    wp_register_script('placeholdercc',get_template_directory_uri() . '/javascripts/jquery.placeholder.min.js','','',true);
+    wp_register_script('jswipecc',get_template_directory_uri() . '/javascripts/jswipe.js','','',true);
+    wp_register_script('tooltipcc',get_template_directory_uri() . '/javascripts/tooltip.js','','',true);
+    wp_register_script('appcc',get_template_directory_uri() . '/javascripts/app.js','','',true);
+
     wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'customs' );
+    wp_enqueue_script( 'orbitcc' );
+    wp_enqueue_script( 'customformscc' );
+    wp_enqueue_script( 'placeholdercc' );
+    wp_enqueue_script( 'jswipecc' );
+    wp_enqueue_script( 'tooltipcc' );
+    wp_enqueue_script( 'appcc' );
 }    
  
 add_action('wp_enqueue_scripts', 'my_scripts_method');
 
 // Disable the admin bar, set to true if you want it to be visible.
-
 show_admin_bar(FALSE);
 
-// Orbit, for WordPress
-
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'automatic-feed-links' );
+
+// Orbit, for WordPress
 
 add_action('init', 'Orbit');
 
