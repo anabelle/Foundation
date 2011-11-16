@@ -1,4 +1,10 @@
 <?php
+// Disable WordPress version reporting as a basic protection against automatic attacks
+function remove_generators() {
+  return '';
+}
+
+add_filter('the_generator','remove_generators');
 
 // Load a jQuery from WordPress the local copy. and enqueue all other scripts
 function my_scripts_method() {
@@ -27,6 +33,7 @@ show_admin_bar(FALSE);
 
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'automatic-feed-links' );
+add_theme_support('nav-menus');
 
 // Orbit, for WordPress
 
