@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Full Width Page
+*/
+?>
+
 <?php get_header(); ?>
 
 		<div class="row">
@@ -13,23 +19,12 @@
 				<?php endif; ?>
 				<!-- End Error Message -->
 			
-				<article class="nine columns">
+				<article class="twelve columns">
 				
 				<!-- Loop Through Posts -->
 				<?php while ( have_posts() ) : the_post(); ?>
 			
-			        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>  
-					
-	        		<div>
-	               		Posted on <strong><?php the_date(); ?></strong>
-	               		by <span class="author"><?php the_author(); ?></span>
-	                	under <span class="author"><?php the_category(', '); ?></span>  
-	                </div> 
-	                
-	                <div>
-						<?php edit_post_link('Edit', '<span>  ' , '</span>'); ?>
-						<span class="comment-count"><?php comments_popup_link('Leave a comment', '1 Comment', '% Comments'); ?></span>  
-					</div> 
+			        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3> 
 	  			
 	        		<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>  
 	            	<?php the_excerpt(); ?>  
@@ -41,19 +36,7 @@
 	        		
 	        		<?php endwhile; ?>  
 	        	
-	        	<!-- Begin Pagination -->
-	        	<?php if (function_exists("emm_paginate")) {
-	        	    emm_paginate();
-	        	} ?>
-	        	<!-- End Pagination -->
-	        	
         		</article>
-        		
-        		<!-- Begin Sidebar -->
-        		<?php get_sidebar(); ?>
-        		<!-- End Sidebar -->
-        		
-        		<hr>
         		        	
         	<!-- End Post Loop -->
 			
