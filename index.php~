@@ -20,7 +20,7 @@
 				
 					<?php while ( have_posts() ) : the_post(); ?>
 					
-					<article <?php post_class(); ?>>
+					<article>
 					
 						<a href="#" class="hide-on-desktops" style="float: right;" alt="Back to Top">Top &uarr;</a>
 						

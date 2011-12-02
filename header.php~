@@ -48,7 +48,7 @@
 	<?php wp_head(); ?>
 
 </head>
-<body <?php body_class(); ?>>
+<body>
 
 <!-- Begin Container -->
 <div class="container" role="main">
