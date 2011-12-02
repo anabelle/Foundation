@@ -7,14 +7,13 @@
 				<!-- Begin Error Message, display if no posts are found -->
 				<?php if ( ! have_posts() ) : ?>
 					<div class="twelve columns">
-        				<h3>Not Found</h1>  
-            			<p>Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post?</p>
+        				<h1>Not Found</h1>  
+            			<h4 class="subheader">Apologies, but no results were found for the requested archive. Perhaps searching will help find a related post?</h4>
             		</div>
 				<?php endif; ?>
 				<!-- End Error Message -->
 			
 				<article class="nine columns">
-				
 				<!-- Loop Through Posts -->
 				<?php while ( have_posts() ) : the_post(); ?>
 			
